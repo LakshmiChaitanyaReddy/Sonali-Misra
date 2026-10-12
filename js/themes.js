@@ -6,7 +6,7 @@
    and app.html both declare sane defaults for every property, so a missing
    theme degrades to the default look.
 
-   Fifteen themes, each a different MOOD rather than a colour swap. Every theme
+   Seventeen themes, each a different MOOD rather than a colour swap. Every theme
    authors all of:
      colour      twelve colours per mode (light AND dark — see mode())
      typography  display / body / mono families from FONTS, weight, tracking,
@@ -25,7 +25,7 @@
 
    COMPATIBILITY: customer sites store a theme id. The 28 retired ids resolve
    through ALIASES to the new theme with the closest mood; an unknown id falls
-   back to minimal-light. THEMES only lists the fifteen current themes.
+   back to minimal-light. THEMES only lists the current themes.
 
    ADDING A PRESET: append one object to THEMES. Nothing else to touch —
    the builder's gallery, the var editor and the validator all read this list.
@@ -222,7 +222,7 @@
       }
     },
     {
-      id: "soft-modern", name: "Soft Modern", category: "Modern", style: "soft-modern", defaultMode: "light",
+      id: "soft-modern", retired: true, name: "Soft Modern", category: "Modern", style: "soft-modern", defaultMode: "light",
       blurb: "Lilac-tinted greys, borderless floating cards, big soft radii and a periwinkle glow. Friendly product-studio calm.",
       fonts: { display: "Outfit", body: "Nunito Sans", mono: "Fira Code" },
       vars: {
@@ -264,7 +264,7 @@
       }
     },
     {
-      id: "porcelain", name: "Porcelain", category: "Minimal", style: "porcelain", defaultMode: "light",
+      id: "porcelain", retired: true, name: "Porcelain", category: "Minimal", style: "porcelain", defaultMode: "light",
       blurb: "Crisp white, cool blue-grey type and hairline rules. Clean, quiet and precise, in the spirit of a product page.",
       fonts: { display: "Hanken Grotesk", body: "Source Sans 3", mono: "IBM Plex Mono" },
       vars: {
@@ -276,7 +276,7 @@
       }
     },
     {
-      id: "sky-calm", name: "Sky Calm", category: "Professional", style: "sky-calm", defaultMode: "light",
+      id: "sky-calm", retired: true, name: "Sky Calm", category: "Professional", style: "sky-calm", defaultMode: "light",
       blurb: "Pale clinical blue, soft teal and gentle rounded cards. Calm and trustworthy, made for care and service professions.",
       fonts: { display: "Figtree", body: "Public Sans", mono: "Roboto Mono" },
       vars: {
@@ -288,7 +288,7 @@
       }
     },
     {
-      id: "sage-calm", name: "Sage Calm", category: "Professional", style: "sage-calm", defaultMode: "light",
+      id: "sage-calm", retired: true, name: "Sage Calm", category: "Professional", style: "sage-calm", defaultMode: "light",
       blurb: "Soft sage greens on warm off-white with a gentle serif heading. Warm, patient and reassuring; good for teaching and wellbeing.",
       fonts: { display: "Lora", body: "Karla", mono: "Roboto Mono" },
       vars: {
@@ -300,7 +300,7 @@
       }
     },
     {
-      id: "sand-linen", name: "Sand & Linen", category: "Executive", style: "sand-linen", defaultMode: "light",
+      id: "sand-linen", retired: true, name: "Sand & Linen", category: "Executive", style: "sand-linen", defaultMode: "light",
       blurb: "Warm sand and linen neutrals, a serif heading and copper accent. Quietly confident for advisory, legal and finance work.",
       fonts: { display: "Source Serif 4", body: "Work Sans", mono: "IBM Plex Mono" },
       vars: {
@@ -310,8 +310,73 @@
         light: mode("#9a4f1f", "#faf6ef", "#f1ebdf", "#fffdf8", "#f3ede1", "#2a2118", "#4d4132", "#6c5e4b", "#e6dccb", "#d3c5ad", "#b42318", "#7a5200"),
         dark:  mode("#e8a56e", "#14110d", "#1a1611", "#201b15", "#29231b", "#f6efe3", "#d8cdb9", "#aa9d86", "#322a20", "#45392b", "#ff8a80", "#e3b341")
       }
+    },
+    {
+      id: "circuit-cyan", retired: true, name: "Circuit Cyan", category: "Technical", style: "circuit-cyan", defaultMode: "dark",
+      blurb: "Midnight blue engineering canvas, cyan signal lines, sharp Sora headings and precise panel boundaries.",
+      fonts: { display: "Sora", body: "IBM Plex Sans", mono: "Fira Code" },
+      vars: {
+        common: shape({ "--radius": "6px", "--radius-sm": "4px", "--chip-radius": "4px", "--maxw": "1680px", "--gap": "1.45rem",
+          "--h-scale": "1.05", "--h-weight": "700", "--h-tracking": "-0.035em", "--line-height": "1.68", "--button-radius": "4px", "--card-lift": "-2px",
+          "--section-y": "clamp(3.5rem,7vw,5.75rem)", "--eyebrow-tracking": ".2em", "--page-pattern": "linear-gradient(90deg,transparent 95%,var(--border) 100%)" }),
+        dark: mode("#63e4e2", "#071319", "#0b1c24", "#10242d", "#15313c", "#f0f8f8", "#cbdcde", "#a4bac0", "#25414a", "#3a626d", "#ff8f80", "#f4c86c"),
+        light: mode("#086774", "#f4fafb", "#eaf3f5", "#ffffff", "#e6f1f3", "#10272d", "#314c53", "#526b72", "#c7dce0", "#a6c2c9", "#a8261b", "#765300")
+      }
+    },
+    {
+      id: "graphite-lime", name: "Graphite & Lime", category: "Technical", style: "graphite-lime", defaultMode: "dark",
+      blurb: "Graphic charcoal panels, bright lime highlights and condensed rhythm for confident modern technology work.",
+      fonts: { display: "Space Grotesk", body: "Hanken Grotesk", mono: "Space Mono" },
+      vars: {
+        common: shape({ "--radius": "14px", "--radius-sm": "8px", "--chip-radius": "999px", "--maxw": "1720px", "--gap": "1.8rem",
+          "--h-scale": "1.12", "--h-weight": "700", "--h-tracking": "-0.045em", "--line-height": "1.62", "--button-radius": "999px", "--card-lift": "-4px",
+          "--section-y": "clamp(4rem,8vw,6.5rem)", "--eyebrow-tracking": ".08em", "--card-shadow": "0 20px 50px -35px rgba(0,0,0,.7)" }),
+        dark: mode("#bcec68", "#111512", "#181e19", "#202821", "#29332a", "#f4f7ed", "#d1ddc8", "#abbca3", "#374238", "#53664d", "#ff8f80", "#e8cf6a"),
+        light: mode("#466b13", "#f7f9f3", "#eef2e6", "#ffffff", "#e9f0df", "#172316", "#354833", "#556850", "#d2ddc9", "#acc59c", "#a8261b", "#765300")
+      }
+    },
+    {
+      id: "signal-grid", name: "Signal Grid", category: "Technical", style: "signal-grid", defaultMode: "dark",
+      blurb: "A dense systems display: electric cyan, numbered panels, grid coordinates and monospaced headings.",
+      fonts: { display: "Space Mono", body: "IBM Plex Sans", mono: "Space Mono" },
+      vars: {
+        common: shape({ "--radius": "0px", "--radius-sm": "0px", "--chip-radius": "0px", "--maxw": "1720px", "--gap": "1rem",
+          "--h-scale": "1.05", "--h-weight": "700", "--h-tracking": "-.06em", "--line-height": "1.62",
+          "--card-border-width": "1px", "--button-radius": "0px", "--card-lift": "0px", "--eyebrow-tracking": ".18em",
+          "--page-pattern": "linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px)",
+          "--section-y": "clamp(3rem,6vw,5rem)" }),
+        dark: mode("#35e5dc", "#071016", "#0b171e", "#0e2028", "#15303a", "#ecfffc", "#c0d9db", "#8baeb3", "#1e3943", "#39717c", "#ff8179", "#e7c968"),
+        light: mode("#006d75", "#f0f8f8", "#e5f2f2", "#ffffff", "#e1eeee", "#10242a", "#304b52", "#526d75", "#c5dfe1", "#759ca2", "#a8261b", "#765300")
+      }
+    },
+    {
+      id: "poster-impact", name: "Poster Impact", category: "Bold", style: "poster-impact", defaultMode: "dark",
+      blurb: "Oversized block type, acid yellow, hard dividers and poster-style section numbers.",
+      fonts: { display: "Syne", body: "Public Sans", mono: "Roboto Mono" },
+      vars: {
+        common: shape({ "--radius": "0px", "--radius-sm": "0px", "--chip-radius": "0px", "--maxw": "1760px", "--gap": "1.4rem",
+          "--h-scale": "1.26", "--h-weight": "800", "--h-tracking": "-.07em", "--line-height": "1.58",
+          "--card-border-width": "2px", "--card-shadow": "8px 8px 0 var(--border-2)", "--button-radius": "0px", "--card-lift": "-5px",
+          "--eyebrow-tracking": ".08em", "--section-y": "clamp(4rem,8vw,7rem)" }),
+        dark: mode("#eaff4e", "#111111", "#1b1b1b", "#1d1d1d", "#2c2c2c", "#ffffff", "#dddddd", "#b8b8b8", "#404040", "#eaff4e", "#ff8a80", "#eaff4e"),
+        light: mode("#384500", "#faf9eb", "#eff0d0", "#ffffff", "#f1f1d8", "#111111", "#323232", "#555555", "#c9cbb0", "#303030", "#b42318", "#6b5200")
+      }
+    },
+    {
+      id: "field-notes", name: "Field Notes", category: "Editorial", style: "field-notes", defaultMode: "light",
+      blurb: "An annotated notebook: expressive serif titles, ruled paper, margin marks and quiet handwritten warmth.",
+      fonts: { display: "Instrument Serif", body: "Karla", mono: "IBM Plex Mono" },
+      vars: {
+        common: shape({ "--radius": "2px", "--radius-sm": "2px", "--chip-radius": "2px", "--maxw": "1560px", "--gap": "1.6rem",
+          "--h-scale": "1.18", "--h-weight": "400", "--h-tracking": "-.02em", "--line-height": "1.8",
+          "--card-border-width": "1px", "--button-radius": "2px", "--card-lift": "0px", "--eyebrow-tracking": ".16em",
+          "--page-pattern": "repeating-linear-gradient(0deg,transparent 0 41px,var(--border) 41px 42px)" }),
+        light: mode("#94552c", "#f9f5e9", "#f1ead8", "#fffcf3", "#f0e8d5", "#2a211b", "#4a3b31", "#6c5b50", "#dfd2bc", "#ad8b6b", "#a8261b", "#765300"),
+        dark: mode("#e4ac80", "#171410", "#201a14", "#241e18", "#30261d", "#f6e9d2", "#d7c6ae", "#ad9a81", "#3e3227", "#9a7659", "#ff8a80", "#e7c16f")
+      }
     }
   ];
+  const GALLERY = THEMES.filter(function (t) { return !t.retired; });
 
   /* ------------------------------------------------------------------
      RETIRED IDS → the current theme with the closest mood. Every id a
@@ -455,6 +520,7 @@ html[data-preset] :is(.project-card,.feature-card):hover { transform:translateY(
          --theme-style marker, so custom themes frozen from a preset keep it. */
       style: styleOf(Object.assign({}, bv.common, cv.common || {})[STYLE_KEY]) || styleOf(base.style),
       defaultMode: base.defaultMode === "dark" ? "dark" : "light",
+      variation: ["standard", "framed", "open", "poster"].indexOf(cfg.variation) !== -1 ? cfg.variation : "standard",
       iconAnimation: typeof cfg.iconAnimation === "string" ? cfg.iconAnimation : "lift",
       fonts: Object.assign({ display: "Inter", body: "Inter", mono: "JetBrains Mono" }, base.fonts, cfg.fonts || {}),
       vars: {
@@ -506,6 +572,7 @@ html[data-preset] :is(.project-card,.feature-card):hover { transform:translateY(
     if (!doc || !resolved) return null;
     const el = doc.documentElement;
     el.setAttribute("data-preset", resolved.id);
+    el.setAttribute("data-theme-variation", resolved.variation || "standard");
     if (resolved.style) el.setAttribute("data-theme-style", resolved.style);
     else el.removeAttribute("data-theme-style");
     let treatments=doc.getElementById('theme-treatments');
@@ -541,6 +608,7 @@ html[data-preset] :is(.project-card,.feature-card):hover { transform:translateY(
   function clearTheme(doc) {
     doc.documentElement.removeAttribute("data-preset");
     doc.documentElement.removeAttribute("data-theme-style");
+    doc.documentElement.removeAttribute("data-theme-variation");
     const style = doc.documentElement.style;
     for (let i = style.length - 1; i >= 0; i--) {
       const prop = style[i];
@@ -551,6 +619,7 @@ html[data-preset] :is(.project-card,.feature-card):hover { transform:translateY(
   PF.provide("themes", {
     FONTS: FONTS,
     THEMES: THEMES,
+    GALLERY: GALLERY,
     ALIASES: ALIASES,
     DEFAULT: FALLBACK,
     STYLE_KEY: STYLE_KEY,

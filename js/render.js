@@ -568,9 +568,10 @@
 
   /* Compact row lists shared by several templates. */
   function simpleRows(d, sk, cls, eyebrow) {
+    const items = arr(d.certifications);
     return wrap("certifications", null, "certifications-title", [
       sectionHead(eyebrow || null, heading(d, sk, "certifications"), "certifications-title"),
-      el("ul", { class: "row-rows " + (cls || ""), role: "list" }, arr(d.certifications).map(function (c, i) {
+      el("ul", { class: "row-rows " + (cls || "") + (items.length > 6 ? " credential-grid" : ""), role: "list" }, items.map(function (c, i) {
         return el("li", { class: "cert-row reveal", style: "--delay:" + Math.min(i, 5) * 50 + "ms" },
           el("div", { class: "rr-main" },
             el("h3", { text: c.name || "Certification" }),
@@ -946,9 +947,10 @@
       ]);
     },
     certifications: function (d, sk) {
+      const items = arr(d.certifications);
       return wrap("certifications", null, "certifications-title", [
         sectionHead(null, heading(d, sk, "certifications"), "certifications-title"),
-        el("ol", { class: "cv-table", role: "list" }, arr(d.certifications).map(function (c) {
+        el("ol", { class: "cv-table" + (items.length > 6 ? " credential-grid" : ""), role: "list" }, items.map(function (c) {
           return el("li", { class: "cv-entry reveal" },
             el("p", { class: "cv-yr", text: c.year || "" }),
             el("div", null, el("h3", { text: c.name || "Award" }), has(c.issuer) && el("p", { class: "cv-inst", text: c.issuer }), verifyLink(c)));
@@ -1093,19 +1095,25 @@
   }
   const showcase = {
     hero: function (d, refs, sk) {
-      const p = d.profile;
+      const p = d.profile, photo = image(p.photo, "hero-photo");
+      const focus = !arr(d.projects).length && arr(d.skills).length > 0 && el("div", { class: "poster-focus" },
+        el("p", { class: "eyebrow", text: "Areas of practice" }),
+        el("ol", { role: "list" }, arr(d.skills).filter(function (g) { return has(g.category); }).slice(0, 5).map(function (g) {
+          return el("li", { text: g.category });
+        })));
       return el("section", { id: "top", class: "hero hero--poster", "aria-labelledby": "hero-title" },
         el("div", { class: "container" },
           el("h1", { id: "hero-title", class: "reveal", text: p.name || "" }),
-          el("div", { class: "poster-row reveal", style: "--delay:100ms" },
-            image(p.photo, "hero-photo"),
+          el("div", { class: "poster-row reveal" + (photo ? " has-photo" : ""), style: "--delay:100ms" },
+            photo,
             el("div", { class: "poster-copy" },
               has(p.title) && el("p", { class: "hero-role", text: p.title }),
               has(p.tagline) && el("p", { class: "hero-pitch" }, F.rich(p.tagline))),
             el("div", { class: "poster-side" },
               has(p.status) && el("p", { class: "hero-tag" }, el("span", { class: "pulse", "aria-hidden": "true" }), p.status),
               has(p.location) && el("p", { class: "hero-meta" }, icon("map-pin"), p.location),
-              (has(p.email) || has(resumeHref(p))) && el("div", { class: "hero-cta" }, mailButton(p, "Say hello"), resumeButton(p, refs)))),
+              (has(p.email) || has(resumeHref(p))) && el("div", { class: "hero-cta" }, mailButton(p, "Say hello"), resumeButton(p, refs)),
+              focus)),
           arr(d.projects).length > 0 && el("a", { class: "scroll-cue reveal", href: "#projects", style: "--delay:200ms" }, "View the work", icon("arrow-down"))));
     },
     projects: function (d, sk) {
@@ -1316,6 +1324,108 @@
     custom: function (sec, id, n) { return customSection(sec, id, "Section " + pad2(n) + (has(sec.eyebrow) ? " · " + sec.eyebrow : "")); }
   };
 
+  function compactHeroIntroduction(node, profile) {
+    const pitch = node.querySelector(".hero-pitch"), full = F.plain(profile.tagline || "");
+    if (!pitch || full.length <= 200 || node.querySelector(".profile-intro")) return;
+    const short = full.slice(0, 160).replace(/\s+\S*$/, "").trim();
+    const disclosure = el("details", { class: "profile-intro" },
+      el("summary", { text: "Read full introduction" }), el("p", null, F.rich(profile.tagline)));
+    pitch.textContent = short + "…";
+    pitch.insertAdjacentElement("afterend", disclosure);
+  }
+
+  /* Operations and security use their own reading paths. Every signal in
+     these panels comes from the person's content; an empty list simply
+     disappears instead of leaving a decorative placeholder. */
+  const cloudOps = {
+    hero: function (d, refs) {
+      const p = d.profile, stats = heroStats(d);
+      return el("section", { id: "top", class: "hero hero--ops", "aria-labelledby": "hero-title" },
+        el("div", { class: "container ops-hero-grid" },
+          el("div", { class: "ops-intro reveal" },
+            el("p", { class: "eyebrow", text: "Operations / portfolio" }),
+            el("h1", { id: "hero-title", text: p.name || "" }),
+            has(p.title) && el("p", { class: "hero-role", text: p.title }),
+            has(p.tagline) && el("p", { class: "hero-pitch" }, F.rich(p.tagline)),
+            el("div", { class: "hero-cta" }, mailButton(p), resumeButton(p, refs))),
+          stats.length > 0 && el("aside", { class: "ops-console reveal", "aria-label": "Portfolio at a glance" },
+            el("p", { class: "ops-console-label", text: "AT A GLANCE" }),
+            statList(stats, "ops-stats"))));
+    },
+    projects: function (d, sk) {
+      return wrap("projects", null, "projects-title", [
+        sectionHead("Delivery record", heading(d, sk, "projects"), "projects-title"),
+        el("ol", { class: "ops-deployments", role: "list" }, orderedProjects(d).map(function (p, i) {
+          return el("li", { class: "ops-deployment reveal" },
+            el("span", { class: "ops-number", text: pad2(i + 1) }),
+            el("div", { class: "ops-deployment-main" },
+              el("h3", { text: p.title || "Project" }),
+              has(p.blurb) && el("p", { class: "project-blurb" }, F.rich(p.blurb)),
+              papList(p, ["Problem", "Approach", "Result"], "ops-pap"),
+              links(p.links, "project-links"), chips(p.tech, (p.title || "Project") + " technologies")));
+        }))
+      ]);
+    },
+    skills: function (d, sk) {
+      return wrap("skills", null, "skills-title", [
+        sectionHead("Capabilities", heading(d, sk, "skills"), "skills-title"),
+        el("div", { class: "ops-service-map" }, arr(d.skills).map(function (g, i) {
+          return el("article", { class: "ops-service reveal" },
+            el("span", { class: "ops-number", text: pad2(i + 1) }),
+            el("h3", { text: g.category || "Tools" }),
+            chips(g.items, g.category || "Tools"));
+        }))
+      ]);
+    },
+    experience: recruiter.experience,
+    certifications: recruiter.certifications,
+    education: recruiter.education
+  };
+
+  const securityBrief = {
+    hero: function (d, refs) {
+      const p = d.profile, focus = arr(d.skills).filter(function (g) { return has(g.category); }).slice(0, 4);
+      return el("section", { id: "top", class: "hero hero--security", "aria-labelledby": "hero-title" },
+        el("div", { class: "container security-hero-grid" },
+          el("div", { class: "security-intro reveal" },
+            el("p", { class: "eyebrow", text: "Professional brief" }),
+            el("h1", { id: "hero-title", text: p.name || "" }),
+            has(p.title) && el("p", { class: "hero-role", text: p.title }),
+            has(p.tagline) && el("p", { class: "hero-pitch" }, F.rich(p.tagline)),
+            el("div", { class: "hero-cta" }, mailButton(p), resumeButton(p, refs))),
+          focus.length > 0 && el("aside", { class: "security-focus reveal", "aria-label": "Focus areas" },
+            el("p", { class: "security-focus-label", text: "FOCUS AREAS" }),
+            el("ol", { role: "list" }, focus.map(function (g, i) {
+              return el("li", null, el("span", { text: pad2(i + 1) }), el("strong", { text: g.category }));
+            })))));
+    },
+    projects: function (d, sk) {
+      return wrap("projects", null, "projects-title", [
+        sectionHead("Selected evidence", heading(d, sk, "projects"), "projects-title"),
+        el("ol", { class: "security-evidence", role: "list" }, orderedProjects(d).map(function (p, i) {
+          return el("li", { class: "security-case reveal" },
+            el("div", { class: "security-case-index" }, el("span", { text: "CASE " + pad2(i + 1) }), el("h3", { text: p.title || "Project" })),
+            el("div", { class: "security-case-body" },
+              has(p.blurb) && el("p", { class: "project-blurb" }, F.rich(p.blurb)),
+              papList(p, ["Challenge", "Action", "Outcome"], "security-pap"),
+              links(p.links, "project-links"), chips(p.tech, (p.title || "Project") + " technologies")));
+        }))
+      ]);
+    },
+    skills: function (d, sk) {
+      return wrap("skills", null, "skills-title", [
+        sectionHead("Practice", heading(d, sk, "skills"), "skills-title"),
+        el("dl", { class: "security-controls" }, arr(d.skills).map(function (g) {
+          return el("div", { class: "reveal" }, el("dt", { text: g.category || "Capability" }),
+            el("dd", null, chips(g.items, g.category || "Capability")));
+        }))
+      ]);
+    },
+    experience: dossier.experience,
+    certifications: dossier.certifications,
+    education: dossier.education
+  };
+
   const VIEWS = {
     "clean-recruiter": recruiter,
     "technical-terminal": terminal,
@@ -1332,17 +1442,32 @@
       const node = recruiter.hero(d, refs, sk); node.classList.add("hero--ledger"); return node;
     } }),
     "engineering-blueprint": Object.assign({}, recruiter, {
-      hero: function (d, refs, sk) { const node = recruiter.hero(d, refs, sk); node.classList.add("hero--blueprint"); return node; },
+      hero: function (d, refs, sk) {
+        const node = recruiter.hero(d, refs, sk); node.classList.add("hero--blueprint");
+        compactHeroIntroduction(node, d.profile);
+        return node;
+      },
       projects: terminal.projects, skills: terminal.skills
     }),
     "project-workbench": Object.assign({}, caseStudy, {
-      hero: function (d, refs, sk) { const node = caseStudy.hero(d, refs, sk); node.classList.add("hero--workbench"); return node; },
+      hero: function (d, refs, sk) {
+        const node = caseStudy.hero(d, refs, sk); node.classList.add("hero--workbench");
+        const groups = arr(d.skills).filter(function (g) { return has(g.category); }).slice(0, 6);
+        if (groups.length) node.querySelector(".container").appendChild(el("aside", { class: "workbench-panel", "aria-label": "Technical focus" },
+          el("p", { class: "eyebrow", text: "Technical focus" }),
+          el("ol", { role: "list" }, groups.map(function (g, i) {
+            return el("li", null, el("span", { text: pad2(i + 1) }), el("a", { href: "#skills", text: g.category }));
+          }))));
+        return node;
+      },
       skills: terminal.skills, experience: recruiter.experience
     }),
     "systems-architect": Object.assign({}, dossier, {
       hero: function (d, refs, sk) { const node = dossier.hero(d, refs, sk); node.classList.add("hero--architect"); return node; },
       projects: caseStudy.projects, skills: report.skills
-    } })
+    }),
+    "cloud-operations": cloudOps,
+    "security-brief": securityBrief
   };
 
   /* ====================================================================
@@ -1509,6 +1634,12 @@
      ==================================================================== */
   function normalise(data) {
     const d = data && typeof data === "object" ? data : {};
+    /* Empty editor rows are useful while somebody is typing, but they are
+       not content. Never publish a heading or an empty card just because a
+       blank object is still present in the saved array. */
+    const meaningful = function (item, fields) {
+      return item && typeof item === "object" && fields.some(function (key) { return has(item[key]); });
+    };
     return {
       theme: d.theme && typeof d.theme === "object" ? d.theme : {},
       pdf: d.pdf && typeof d.pdf === "object" ? d.pdf : {},
@@ -1516,7 +1647,9 @@
       sectionLabels: d.sectionLabels && typeof d.sectionLabels === "object" && !Array.isArray(d.sectionLabels) ? d.sectionLabels : {},
       profile: d.profile && typeof d.profile === "object" && !Array.isArray(d.profile) ? d.profile : {},
       experience: arr(d.experience), projects: arr(d.projects), skills: arr(d.skills),
-      certifications: arr(d.certifications), education: arr(d.education), sections: arr(d.sections),
+      certifications: arr(d.certifications).filter(function (c) { return meaningful(c, ["name", "abbr"]); }),
+      education: arr(d.education).filter(function (e) { return meaningful(e, ["degree", "institution"]); }),
+      sections: arr(d.sections),
       sectionOrder: arr(d.sectionOrder), hiddenSections: arr(d.hiddenSections)
     };
   }
@@ -1563,7 +1696,9 @@
     }
 
     head(d, doc);
-    refs.main.appendChild(view.hero ? view.hero(d, refs, sk) : hero(d, refs, sk));
+    const heroNode = view.hero ? view.hero(d, refs, sk) : hero(d, refs, sk);
+    if (sk.id === "studio-split" || (sk.id === "clean-recruiter" && doc.body && doc.body.classList.contains("is-sparse"))) compactHeroIntroduction(heroNode, d.profile);
+    refs.main.appendChild(heroNode);
 
     const sectionHost = sk.sectionContainer ? el("div", { class: "portfolio-sections" }) : refs.main;
     if (sectionHost !== refs.main) refs.main.appendChild(sectionHost);

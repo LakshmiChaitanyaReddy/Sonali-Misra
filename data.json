@@ -14,7 +14,7 @@
       "common": {}
     },
     "fonts": {},
-    "preset": "bold-gradient",
+    "preset": "editorial-bw",
     "customThemes": [],
     "iconAnimation": "lift"
   },
@@ -22,252 +22,99 @@
     {
       "icon": "",
       "items": [
-        "Workflows",
-        "Business Rules",
-        "Client Scripts",
-        "UI Policies",
-        "UI Actions",
-        "and"
+        "Certified ServiceNow Administrator (CSA)",
+        "Certified Application Developer (CAD)"
       ],
-      "category": "Skills"
+      "category": "ServiceNow Platform"
     },
     {
       "icon": "",
       "items": [
-        "JavaScript",
-        "systems such as Jira",
-        "Salesforce",
-        "Microsoft Teams",
-        "BMC",
-        "and Kafka"
+        "JavaScript (ServiceNow scripting)",
+        "GlideScripting",
+        "HTML5",
+        "CSS3",
+        "AngularJS",
+        "UI Development"
       ],
-      "category": "Scripting Languages"
-    },
-    {
-      "icon": "",
-      "items": [
-        "enabling seamless cross-platform automation."
-      ],
-      "category": "(ServiceNow scripting), Glide scripting"
-    },
-    {
-      "icon": "",
-      "items": [
-        "HTML",
-        "CSS",
-        "Experienced in Service Portal development",
-        "building custom widgets"
-      ],
-      "category": "Web technologies"
-    },
-    {
-      "icon": "",
-      "items": [
-        "using JavaScript",
-        "HTML",
-        "and CSS",
-        "and designing responsive self-"
-      ],
-      "category": "ServiceNow UI development"
+      "category": "Scripting & Web"
     },
     {
       "icon": "",
       "items": [
         "ITSM",
-        "service solutions to enhance user experience."
-      ],
-      "category": "ServiceNow modules"
-    },
-    {
-      "icon": "",
-      "items": [
-        "Working knowledge of CMDB administration",
-        "CI relationships"
-      ],
-      "category": "Integrations, CMDB, CSM, HRSD"
-    },
-    {
-      "icon": "",
-      "items": [
         "HRSD",
+        "ITOM (Discovery, Service Mapping, Event Mgmt)",
         "CSM",
-        "ITOM",
+        "Service Portal",
+        "CMDB",
         "App Engine Studio",
+        "UI Builder",
         "Virtual Agent",
-        "Now Assist"
-      ],
-      "category": "Service Portal, ITOM, App Engine"
-    },
-    {
-      "icon": "",
-      "items": [
-        "GEN AI and UI Builder. supporting configuration",
-        "case management"
-      ],
-      "category": "Studio, UI Builder, Virtual Agent"
-    },
-    {
-      "icon": "",
-      "items": [
         "Agentic AI",
-        "GEN AI",
-        "Now Assist and",
-        "and low-code application development."
+        "Now Assist",
+        "Gen AI"
       ],
-      "category": "Skills"
-    },
-    {
-      "icon": "",
-      "items": [
-        "Skilled in catalog item development",
-        "record producers",
-        "order guides"
-      ],
-      "category": "Custom & Scoped Applications."
+      "category": "ServiceNow Modules"
     },
     {
       "icon": "",
       "items": [
         "Incident",
-        "ACL security",
-        "data imports",
-        "transform maps",
-        "reports",
-        "dashboards",
-        "and"
+        "Problem",
+        "Change",
+        "Service Catalog",
+        "Knowledge",
+        "Workflows",
+        "Flow Designer"
       ],
-      "category": "ServiceNow ITSM modules"
+      "category": "ITSM Operations"
     },
     {
       "icon": "",
       "items": [
-        "email notifications."
-      ],
-      "category": "Problem, Change, Service Catalogue"
-    },
-    {
-      "icon": "",
-      "items": [
-        "Experienced in Agile/Scrum delivery environments",
-        "collaborating with"
-      ],
-      "category": "Knowledge, Service Portal, Event"
-    },
-    {
-      "icon": "",
-      "items": [
-        "for enterprise IT operations."
-      ],
-      "category": "Workflows, Flow Designer and"
-    },
-    {
-      "icon": "",
-      "items": [
-        "Proven ability to improve service efficiency",
-        "automate workflows",
-        "and"
-      ],
-      "category": "Administration."
-    },
-    {
-      "icon": "",
-      "items": [
-        "Development"
-      ],
-      "category": "Service Portal"
-    },
-    {
-      "icon": "",
-      "items": [
-        "and integration."
-      ],
-      "category": "customization, and UI/UX enhancements"
-    },
-    {
-      "icon": "",
-      "items": [
-        "REST APIs (Postman)"
+        "Integration Hub",
+        "REST APIs (Postman)",
+        "SOAP APIs",
+        "Confluent Kafka",
+        "Jira",
+        "Salesforce",
+        "MS",
+        "Teams",
+        "LDAP/Active Directory"
       ],
       "category": "Integrations"
     },
     {
       "icon": "",
       "items": [
-        "SOAP APIs",
-        "Confluent Kafka",
-        "Jira",
-        "and",
-        "LDAP/Active Directory"
-      ],
-      "category": "Skills"
-    },
-    {
-      "icon": "",
-      "items": [
         "Update Sets",
         "Transform Maps",
-        "EXPERIENCE"
+        "ACL Security",
+        "Email Notifications",
+        "Domain Separation",
+        "Performance",
+        "Analytics",
+        "Dashboards",
+        "Reporting"
       ],
-      "category": "Other"
+      "category": "Platform Admin"
     },
     {
       "icon": "",
       "items": [
-        "August 2023 - Current"
-      ],
-      "category": "Email Notifications, Domain Separation"
-    },
-    {
-      "icon": "",
-      "items": [
-        "ServiceNow Developer IBM (Payroll: COMPUSYS SYSTEMS"
-      ],
-      "category": "Performance Analytics, Reporting, and"
-    },
-    {
-      "icon": "",
-      "items": [
-        "PRIVATE LIMITED)",
-        "Bengaluru",
-        "India"
-      ],
-      "category": "Dashboards"
-    },
-    {
-      "icon": "",
-      "items": [
-        "Agile (Scrum)"
+        "Agile (Scrum)",
+        "Waterfall",
+        "ITIL Best Practices"
       ],
       "category": "Methodologies"
-    },
-    {
-      "icon": "",
-      "items": [
-        "HRSD."
-      ],
-      "category": "Waterfall"
-    },
-    {
-      "icon": "",
-      "items": [
-        "Implemented and configured ServiceNow HR Service"
-      ],
-      "category": "Description"
-    },
-    {
-      "icon": "",
-      "items": [
-        "Delivery (HRSD) solutions including HR Case Management",
-        "Employee Service Center",
-        "HR Catalog Items",
-        "Case Workflows"
-      ],
-      "category": "Skills"
     }
   ],
   "profile": {
     "name": "SONALI MISRA",
-    "about": [],
+    "about": [
+      "Results-driven **ServiceNow Developer** with **3+ years** of IT experience specializing in ServiceNow development, platform administration, and enterprise integrations. Hands-on expertise across ITSM, HRSD, ITOM, CSM, Service Portal, and emerging technologies like Agentic AI, Now Assist, and Gen AI. Experienced in automating workflows, building REST/SOAP API integrations, developing custom Service Portal widgets, and working in Agile/Scrum delivery environments to improve service efficiency and operational productivity."
+    ],
     "email": "sonalimisra2029@gmail.com",
     "links": [
       {
@@ -276,45 +123,196 @@
         "label": "LinkedIn"
       }
     ],
-    "phone": "8125468426",
+    "phone": "+91 8125468426",
     "photo": {
       "alt": "",
       "src": ""
     },
-    "title": "ServiceNow Developer",
+    "title": "ServiceNow Develooper",
     "status": "Open to new roles",
     "ogImage": {
       "alt": "",
       "src": ""
     },
     "siteUrl": "",
-    "tagline": "I am a ServiceNow Developer with over 3 years of hands-on experience designing, configuring, and scaling solutions on the ServiceNow platform. My expertise spans core ITSM modules, custom Service Portal development, and robust enterprise integrations using REST and SOAP APIs. Passionate about automation and modern technology, I leverage tools like Virtual Agent, Now Assist, and low-code app development to bridge business needs with technical execution, delivering scalable solutions that enhance user productivity",
-    "location": "Hyderabad",
+    "tagline": "Results-driven **ServiceNow Developer** with **3+ years** of IT experience specializing in ServiceNow development, platform administration, and enterprise integrations.",
+    "location": "Location: Bengaluru, India",
     "brandIcon": "",
-    "resumeUrl": "assets/sonalimisra-servicenow-7d6dccf7.pdf",
+    "resumeUrl": "assets/sonalimisra-servicenow-d792708b.pdf",
     "shortName": "SONALI",
     "resumeMode": "file",
     "resumeName": "Sonalimisra_Servicenow.pdf",
     "yearsRounding": "",
     "experienceYears": ""
   },
-  "projects": [],
+  "projects": [
+    {
+      "id": "proj-1",
+      "tech": [
+        "ServiceNow HRSD",
+        "HR Case Management",
+        "Employee Service Center",
+        "HR Service Catalog",
+        "Flow Designer",
+        "Business Rules",
+        "Client Scripts",
+        "UI Policies",
+        "Script Includes",
+        "Import Sets",
+        "Transform Maps",
+        "Reports",
+        "Dashboards",
+        "SLA",
+        "GlideRecord",
+        "JavaScript",
+        "Service Portal."
+      ],
+      "blurb": "Implemented and automated ServiceNow HRSD solutions to streamline HR case operations, lifecycle processes, and employee self-service delivery",
+      "image": {
+        "alt": "",
+        "src": ""
+      },
+      "links": [],
+      "title": "HR Service Delivery Implementation and Automation (HRSD)",
+      "result": "Streamlined HR service delivery, improved case resolution speed, and enabled seamless automated data migration for large-scale operations.",
+      "problem": "Manual HR requests and fragmented processes caused delays in case resolution, tracking inefficiencies, and high operational overhead across employee lifecycle workflows.",
+      "approach": "Implemented and configured ServiceNow HRSD, including HR Case Management and the Employee Service Portal.\n\nDesigned custom HR Catalog Items, Case Workflows, assignment rules, case templates, and transfer cases to automate lifecycle operations.\n\nDeveloped Business Rules, Client Scripts, UI Policies, and Script Includes to enforce logic and streamline case processing.\n\nExecuted bulk case creation, HR skill management, and automated data ingestion using Import Sets and Transform Maps.\n\nBuilt dashboards and reports to monitor case performance, SLA compliance, and HR KPIs.",
+      "featured": true
+    },
+    {
+      "id": "proj-2",
+      "tech": [
+        "ServiceNow ITOM",
+        "Discovery",
+        "Service Mapping",
+        "CMDB",
+        "CMDB Health",
+        "Event Management",
+        "MID Server",
+        "Cloud Discovery",
+        "AWS",
+        "Azure",
+        "ITOM Visibility",
+        "Flow Designer",
+        "IntegrationHub",
+        "Business Rules",
+        "REST API",
+        "SOAP API",
+        "JavaScript",
+        "GlideRecord",
+        "Reports",
+        "Dashboards",
+        "Performance Analytics",
+        "ITIL"
+      ],
+      "blurb": "mplemented ServiceNow ITOM solutions to automate infrastructure discovery, enhance CMDB health, and enable proactive enterprise monitoring.",
+      "image": {
+        "alt": "",
+        "src": ""
+      },
+      "links": [],
+      "title": "Enterprise IT Operations Management (ITOM) Implementation",
+      "result": "Reduced alert noise, improved monitoring accuracy, enhanced multi-cloud asset tracking, and achieved complete visibility into infrastructure dependencies.",
+      "problem": "Fragmented asset visibility, inaccurate CMDB data, and high alert noise hindered effective IT impact analysis and proactive operational monitoring.",
+      "approach": "Deployed ServiceNow Discovery, MID Servers, and Credential Management for automated CI ingestion into the CMDB.\n\nConfigured Service Mapping and Application Services to establish dependency maps for accurate impact analysis.\n\nManaged CMDB Health rules, CI relationships, and lifecycle management to optimize CMDB data quality.\n\nImplemented Event Management with alert correlation and Event Rules to minimize alert noise and streamline operational response.\n\nIntegrated AWS and Azure Cloud Discovery for unified multi-cloud infrastructure visibility and asset management.\n\nAutomated workflows using IntegrationHub, Flow Designer, and REST/SOAP APIs, while monitoring coverage via Performance Analytics dashboards.",
+      "featured": false
+    },
+    {
+      "id": "proj-3",
+      "tech": [
+        "ServiceNow ITSM",
+        "Service Catalog",
+        "Flow Designer",
+        "Glide Scripting",
+        "REST APIs",
+        "Import Sets",
+        "Transform Maps",
+        "Performance Analytics",
+        "Agile/Scrum"
+      ],
+      "blurb": "Designed and automated an integrated Employee Onboarding application to coordinate provisioning workflows across HR, IT, and Facilities.",
+      "image": {
+        "alt": "",
+        "src": ""
+      },
+      "links": [],
+      "title": "Employee Onboarding Application (ITSM)",
+      "result": "Achieved a 30% reduction in onboarding turnaround time and a 25% reduction in manual HR effort.",
+      "problem": "Manual onboarding processes led to communication delays and friction across HR, IT, and Facilities, slowing down time-to-productivity for new hires.",
+      "approach": "Designed an end-to-end onboarding application using Service Catalog and Flow Designer to trigger multi-departmental provisioning tasks automatically.\n\nBuilt dynamic catalog items, record producers, and conditional forms powered by Business Rules and Glide Scripting.\n\nConfigured SLAs, automated task workflows, and notifications to track access provisioning, equipment allocation, and workspace setup.\n\nIntegrated ServiceNow with external enterprise systems via REST APIs for seamless cross-platform data exchange.\n\nConducted data migration using Import Sets/Transform Maps and managed Update Set deployments in Agile (Scrum) sprint cycles.",
+      "featured": false
+    },
+    {
+      "id": "proj-4",
+      "tech": [
+        "ServiceNow Service Portal",
+        "AngularJS",
+        "HTML/CSS",
+        "JavaScript",
+        "Server/Client Scripts",
+        "Service Catalog",
+        "Knowledge Base",
+        "ACLs",
+        "Widget Development",
+        "DHARANEETHARAN-SIVAKUMAR"
+      ],
+      "blurb": "Modernised enterprise self-service portals using custom AngularJS widgets to enhance usability, accessibility, and service fulfillment.",
+      "image": {
+        "alt": "",
+        "src": ""
+      },
+      "links": [],
+      "title": "Enterprise Self-Service Portal Modernisation",
+      "result": "Improved user satisfaction, increased portal adoption, and enhanced system stability and speed across multi-portal environments.",
+      "problem": "Legacy portal interfaces lacked responsiveness, performance, and customisation, making service request submission unintuitive for users.",
+      "approach": "Customized Service Portal pages, themes, and layouts to deliver responsive self-service interfaces across HR, IT, and Enterprise Service Management.\n\nDeveloped dynamic custom widgets using AngularJS, HTML, CSS, JavaScript, and Server Scripts to expand portal functionality.\n\nIntegrated Catalog Items, Record Producers, Knowledge Base articles, and workflows into the portal for single-pane fulfillment.\n\nSecured access by configuring role-based access controls (ACLs), portal security rules, and widget/client scripts.\n\nOptimised portal responsiveness through widget customisation, debugging, and performance tuning.",
+      "featured": false
+    }
+  ],
   "sections": [],
   "template": {
     "look": "clean-recruiter",
     "pack": "software-it",
-    "skeleton": "clean-recruiter"
+    "skeleton": "clean-recruiter",
+    "careerChart": true
   },
   "education": [
     {
-      "degree": "MCA",
+      "degree": "Master of Computer Applications (MCA)",
       "detail": "",
       "endYear": "2023",
       "startYear": "",
       "institution": "National Institute of Science and Technology, Berhampur, Odisha"
     }
   ],
-  "experience": [],
+  "experience": [
+    {
+      "id": "exp-1",
+      "role": "ServiceNow Developer",
+      "tech": [
+        "ITSM",
+        "HRSD",
+        "UI Builder",
+        "Virtual Agent",
+        "Agentic AI",
+        "Now Assist",
+        "Workflows",
+        "Flow Designer"
+      ],
+      "company": "IBM (Payroll: Compusys Systems Pvt. Ltd.)",
+      "endDate": null,
+      "summary": "",
+      "location": "Bengaluru, India",
+      "startDate": "2023-08",
+      "highlights": [
+        "Designed, customized, and deployed enterprise ServiceNow solutions across ITSM, HRSD, ITOM, and custom scoped applications following ITIL and Agile standards.",
+        "Engineered automated workflows, business logic, and security rules utilizing Business Rules, Client Scripts, UI Policies Script Includes, Flow Designer, and ACLs.",
+        "Developed AI-powered and self-service conversational workflows using Now Assist, Agentic AI, Virtual Agent, NLU, and UI Builder to enhance agent productivity and user experience.",
+        "Built robust multi-system integrations with REST/SOAP APIs, Kafka, Jira, and enterprise systems.",
+        "Managed platform deployments via Update Sets, performed data migration with Import Sets/Transform Maps, and created executive dashboards and reports."
+      ]
+    }
+  ],
   "sectionOrder": [
     "about",
     "experience",
@@ -335,49 +333,25 @@
     {
       "abbr": "",
       "icon": "",
-      "name": "Assignment Rules",
+      "name": "ServiceNow Certified System Administrator (CSA)",
       "year": "",
-      "issuer": "and Lifecycle Event Automation. Developed",
+      "issuer": "",
       "credentialUrl": ""
     },
     {
       "abbr": "",
       "icon": "",
-      "name": "Certified System Administrator (CSA)",
+      "name": "ServiceNow Certified Application Developer (CAD)",
       "year": "",
-      "issuer": "Business Rules, Client Scripts, UI Policies, Script Includes, dashboards",
+      "issuer": "",
       "credentialUrl": ""
     },
     {
       "abbr": "",
       "icon": "",
-      "name": "Certified Application Developer (CAD)",
+      "name": "ServiceNow Micro-Certifications: Flow Designer & CMDB Health",
       "year": "",
-      "issuer": "reports, import sets, and bulk data operations to streamline HR",
-      "credentialUrl": ""
-    },
-    {
-      "abbr": "",
-      "icon": "",
-      "name": "Micro-Certification - CMDB Health",
-      "year": "",
-      "issuer": "operations and improve service delivery efficiency.",
-      "credentialUrl": ""
-    },
-    {
-      "abbr": "",
-      "icon": "",
-      "name": "Service Now Micro-Certifications in",
-      "year": "",
-      "issuer": "Implemented and configured HR Service Delivery (HRSD)",
-      "credentialUrl": ""
-    },
-    {
-      "abbr": "",
-      "icon": "",
-      "name": "Flow Designer",
-      "year": "",
-      "issuer": "including Case Management and Employee Service Portal.",
+      "issuer": "",
       "credentialUrl": ""
     },
     {
@@ -385,191 +359,7 @@
       "icon": "",
       "name": "Agentic AI Executive Micro-Certification",
       "year": "",
-      "issuer": "Designed and developed the HR Service Catalogue and HR",
-      "credentialUrl": ""
-    },
-    {
-      "abbr": "",
-      "icon": "",
-      "name": "Catalogue Items for employee lifecycle processes.",
-      "year": "",
       "issuer": "",
-      "credentialUrl": ""
-    },
-    {
-      "abbr": "",
-      "icon": "",
-      "name": "Configured HR case workflows",
-      "year": "",
-      "issuer": "case templates",
-      "credentialUrl": ""
-    },
-    {
-      "abbr": "",
-      "icon": "",
-      "name": "PROJECT HIGHLIGHTS",
-      "year": "",
-      "issuer": "and transfer cases for efficient HR operations.",
-      "credentialUrl": ""
-    },
-    {
-      "abbr": "",
-      "icon": "",
-      "name": "Developed business rules",
-      "year": "",
-      "issuer": "client scripts",
-      "credentialUrl": ""
-    },
-    {
-      "abbr": "",
-      "icon": "",
-      "name": "Developed and customized Scoped",
-      "year": "",
-      "issuer": "",
-      "credentialUrl": ""
-    },
-    {
-      "abbr": "",
-      "icon": "",
-      "name": "includes specific to HR case automation.",
-      "year": "",
-      "issuer": "",
-      "credentialUrl": ""
-    },
-    {
-      "abbr": "",
-      "icon": "",
-      "name": "Applications using App Engine",
-      "year": "",
-      "issuer": "",
-      "credentialUrl": ""
-    },
-    {
-      "abbr": "",
-      "icon": "",
-      "name": "Studio",
-      "year": "",
-      "issuer": "Flow Designer",
-      "credentialUrl": ""
-    },
-    {
-      "abbr": "",
-      "icon": "",
-      "name": "Client Scripts",
-      "year": "",
-      "issuer": "UI Policies",
-      "credentialUrl": ""
-    },
-    {
-      "abbr": "",
-      "icon": "",
-      "name": "Includes",
-      "year": "",
-      "issuer": "and ACLs.",
-      "credentialUrl": ""
-    },
-    {
-      "abbr": "",
-      "icon": "",
-      "name": "Implemented ServiceNow ITOM",
-      "year": "",
-      "issuer": "",
-      "credentialUrl": ""
-    },
-    {
-      "abbr": "",
-      "icon": "",
-      "name": "solutions including Discovery",
-      "year": "",
-      "issuer": "Service",
-      "credentialUrl": ""
-    },
-    {
-      "abbr": "",
-      "icon": "",
-      "name": "Mapping",
-      "year": "",
-      "issuer": "Event Management",
-      "credentialUrl": ""
-    },
-    {
-      "abbr": "",
-      "icon": "",
-      "name": "Server Configuration",
-      "year": "",
-      "issuer": "and",
-      "credentialUrl": ""
-    },
-    {
-      "abbr": "",
-      "icon": "",
-      "name": "infrastructure visibility automation.",
-      "year": "",
-      "issuer": "",
-      "credentialUrl": ""
-    },
-    {
-      "abbr": "",
-      "icon": "",
-      "name": "Managed and enhanced CMDB",
-      "year": "",
-      "issuer": "",
-      "credentialUrl": ""
-    },
-    {
-      "abbr": "",
-      "icon": "",
-      "name": "through CI lifecycle management",
-      "year": "",
-      "issuer": "",
-      "credentialUrl": ""
-    },
-    {
-      "abbr": "",
-      "icon": "",
-      "name": "relationship mapping",
-      "year": "",
-      "issuer": "CMDB Health",
-      "credentialUrl": ""
-    },
-    {
-      "abbr": "",
-      "icon": "",
-      "name": "remediation",
-      "year": "",
-      "issuer": "and Discovery",
-      "credentialUrl": ""
-    },
-    {
-      "abbr": "",
-      "icon": "",
-      "name": "integrations",
-      "year": "",
-      "issuer": "",
-      "credentialUrl": ""
-    },
-    {
-      "abbr": "",
-      "icon": "",
-      "name": "Configured and supported Customer",
-      "year": "",
-      "issuer": "",
-      "credentialUrl": ""
-    },
-    {
-      "abbr": "",
-      "icon": "",
-      "name": "Service Management (CSM) including",
-      "year": "",
-      "issuer": "",
-      "credentialUrl": ""
-    },
-    {
-      "abbr": "",
-      "icon": "",
-      "name": "Case Management",
-      "year": "",
-      "issuer": "Entitlements",
       "credentialUrl": ""
     }
   ],

@@ -309,8 +309,8 @@ img { max-width: 100%; display: block; }
 }
 .theme-card:hover { border-color: var(--border-2); transform: translateY(-2px); }
 .theme-card[aria-pressed="true"] { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
-.theme-site-thumb { position:relative; display:block; height:176px; overflow:hidden; background:var(--bg); border-bottom:1px solid var(--border); }
-.theme-site-thumb iframe { position:absolute; inset:0 auto auto 0; display:block; width:1200px; height:760px; border:0; pointer-events:none; transform:scale(.235); transform-origin:top left; background:white; }
+.theme-site-thumb { position:relative; display:block; height:240px; overflow:hidden; background:var(--bg); border-bottom:1px solid var(--border); }
+.theme-site-thumb iframe { position:absolute; inset:0 auto auto 0; display:block; width:1440px; height:1200px; border:0; pointer-events:none; transform:scale(.2); transform-origin:top left; background:var(--bg); }
 .theme-site-thumb .theme-loading { position:absolute; inset:0; display:grid; place-items:center; color:var(--text-dim); font:500 .72rem/1.4 var(--font-mono); background:var(--surface); }
 .theme-site-thumb.is-ready .theme-loading { display:none; }
 .theme-mock { min-height: 150px; padding: .65rem; display: grid; gap: .55rem; align-content: start; }
@@ -332,7 +332,7 @@ img { max-width: 100%; display: block; }
 .theme-mock .m-card::after { background:var(--pm-dim); width:88%; margin-top:5px; }
 .theme-mode-label { position:absolute; margin:.45rem; padding:.1rem .35rem; border-radius:999px; background:color-mix(in srgb,var(--pm-surface) 88%,transparent); color:var(--pm-mid); font:600 .58rem/1.4 var(--font-mono); text-transform:uppercase; letter-spacing:.08em; }
 .theme-preview-wrap { position:relative; display:block; }
-.theme-body { padding: .7rem .8rem .8rem; border-top: 1px solid var(--border); }
+.theme-body { display:block; padding: .7rem .8rem .8rem; border-top: 1px solid var(--border); }
 .theme-body strong { display: block; color: var(--text); font-size: .9rem; }
 .theme-body span { display: block; font-size: .76rem; color: var(--text-dim); margin-top: .15rem; }
 .theme-fonts { font-family: var(--font-mono); font-size: .68rem; color: var(--text-dim); margin-top: .45rem; }

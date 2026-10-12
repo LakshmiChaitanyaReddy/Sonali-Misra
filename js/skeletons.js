@@ -40,7 +40,7 @@
     {
       careerChart: "default", id: "clean-recruiter", name: "Clean Recruiter",
       blurb: "Calm single column that reads like a well-set resume: strong summary, experience first, skills as plain lists. ATS-friendly and quick to scan.",
-      navMode: "top", heroVariant: "recruiter", showStatBand: true, density: "normal", brand: "full", filters: false,
+      navMode: "top", heroVariant: "recruiter", showStatBand: true, density: "normal", brand: "full", filters: false, sectionContainer: true,
       order: ["about", "experience", "skills", "projects", "education", "certifications"],
       labels: {}, headings: { about: "Summary", experience: "Experience", skills: "Skills", projects: "Selected projects", education: "Education", certifications: "Certifications" },
       sketch: [
@@ -199,7 +199,7 @@
     {
       careerChart: "default", id: "studio-split", name: "Studio Split",
       blurb: "A spacious desktop canvas with a sticky profile panel on the left and the portfolio flowing on the right. Especially effective when the content is concise.",
-      navMode: "top", heroVariant: "studio", showStatBand: true, density: "normal", brand: "first", filters: false,
+      navMode: "top", heroVariant: "studio", showStatBand: true, density: "normal", brand: "first", filters: false, sectionContainer: true,
       order: ["about", "skills", "experience", "projects", "education", "certifications"],
       labels: {}, headings: { about: "Profile", skills: "Capabilities", experience: "Experience", projects: "Selected work", education: "Education", certifications: "Credentials" },
       sketch: [
@@ -233,7 +233,7 @@
     {
       careerChart: "default", id: "engineering-blueprint", name: "Engineering Blueprint",
       blurb: "Architecture-first engineering portfolio: an anchored identity rail, repository-style builds and a readable stack specification.",
-      navMode: "top", heroVariant: "blueprint", showStatBand: true, density: "dense", brand: "full", filters: true,
+      navMode: "top", heroVariant: "blueprint", showStatBand: true, density: "dense", brand: "full", filters: true, sectionContainer: true,
       order: ["projects", "skills", "experience", "about", "certifications", "education"],
       labels: {}, headings: { projects: "Systems & builds", skills: "Technical specification", experience: "Delivery history", about: "Engineering approach", certifications: "Credentials", education: "Education" },
       sketch: ["┌────────┬───────────────┐", "│ PROFILE│ 01 BUILDS     │", "│ Name   │ [repo] [repo] │", "│ Role   ├───────────────┤", "│ stats  │ 02 STACK      │", "│ sticky │ config rows   │", "│        │ 03 HISTORY    │", "└────────┴───────────────┘"]
@@ -253,6 +253,22 @@
       order: ["about", "projects", "skills", "experience", "certifications", "education"],
       labels: {}, headings: { about: "Architecture perspective", projects: "Systems delivered", skills: "Capability map", experience: "Architecture roles", certifications: "Credentials", education: "Education" },
       sketch: ["┌────────────────────────┐", "│ NAME       ARCHITECTURE│", "├──────────────┬─────────┤", "│ overview     │ portrait│", "│ approach     │ signals │", "├──────────────┴─────────┤", "│ CASE / DECISION / IMPACT│", "│ CAPABILITY MAP          │", "└────────────────────────┘"]
+    },
+    {
+      careerChart: "default", id: "cloud-operations", name: "Cloud Operations",
+      blurb: "An operations board with a compact identity, service map, deployment records and a dated delivery history.",
+      navMode: "top", heroVariant: "operations", showStatBand: true, density: "dense", brand: "full", filters: false,
+      order: ["projects", "skills", "experience", "about", "certifications", "education"],
+      labels: {}, headings: { projects: "Deployments", skills: "Service map", experience: "Operating history", about: "Approach", certifications: "Credentials", education: "Education" },
+      sketch: ["┌────────────────────────┐", "│ OPERATIONS / PROFILE   │", "│ Name        live stats │", "├────────────────────────┤", "│ DEPLOY 01 / outcome    │", "│ DEPLOY 02 / outcome    │", "├────────────────────────┤", "│ SERVICE MAP / stack    │", "└────────────────────────┘"]
+    },
+    {
+      careerChart: "default", id: "security-brief", name: "Security Brief",
+      blurb: "A high-signal security and reliability brief with numbered evidence, capability rows and a clear record of roles.",
+      navMode: "top", heroVariant: "security", showStatBand: false, density: "normal", brand: "full", filters: false,
+      order: ["about", "projects", "skills", "experience", "certifications", "education"],
+      labels: {}, headings: { about: "Profile brief", projects: "Evidence & outcomes", skills: "Control areas", experience: "Professional record", certifications: "Credentials", education: "Education" },
+      sketch: ["┌────────────────────────┐", "│ SECURITY / PROFILE     │", "│ Name     Focus areas   │", "├───────┬────────────────┤", "│ CASE 01│ Evidence      │", "│ CASE 02│ Outcome       │", "├───────┴────────────────┤", "│ CONTROLS / EXPERIENCE  │", "└────────────────────────┘"]
     }
   ];
 

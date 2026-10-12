@@ -43,6 +43,7 @@
   let previewReady = false;
   let themePreviewReady = false;
   let themePreviewDevice = "desktop";
+  let themeThumbObserver = null;
   let previewView = "site";
   let editMode = "dark";
   let applyThemeHere = false;
@@ -63,12 +64,13 @@
        save must never erase settings created by the main builder. */
     return Object.assign({}, d, {
       theme: {
-        preset: typeof t.preset === "string" && t.preset ? t.preset : "graphite",
+        preset: typeof t.preset === "string" && t.preset ? t.preset : "minimal-light",
         mode: t.mode === "light" ? "light" : "dark",
+        variation: ["standard", "framed", "open", "poster"].indexOf(t.variation) !== -1 ? t.variation : "standard",
         iconAnimation: typeof t.iconAnimation === "string" ? t.iconAnimation : "lift",
         fonts: obj(t.fonts),
         vars: { common: obj(tv.common), dark: obj(tv.dark), light: obj(tv.light) },
-        templates: list(t.templates)
+        templates: list(t.customThemes).length ? list(t.customThemes) : list(t.templates)
       },
       template: Object.assign({ skeleton: "clean-recruiter", pack: "software-it", look: "clean-recruiter" }, obj(d.template)),
       pdf: {
@@ -1075,6 +1077,22 @@
     document.documentElement.setAttribute("data-theme", "dark");
   }
 
+  function fitThemeThumbnails(panel) {
+    if (themeThumbObserver) themeThumbObserver.disconnect();
+    const fit = function (host) {
+      const frame = host.querySelector("iframe"), scale = host.clientWidth / 1440;
+      if (!frame || !scale) return;
+      frame.style.height = Math.ceil(host.clientHeight / scale) + "px";
+      frame.style.transform = "scale(" + scale + ")";
+    };
+    const hosts = Array.from(panel.querySelectorAll(".theme-site-thumb"));
+    hosts.forEach(fit);
+    if (window.ResizeObserver) {
+      themeThumbObserver = new ResizeObserver(function (entries) { entries.forEach(function (entry) { fit(entry.target); }); });
+      hosts.forEach(function (host) { themeThumbObserver.observe(host); });
+    }
+  }
+
   function buildThemePanel(panel) {
     clear(panel);
     panel.appendChild(el("div", { class: "panel-head" }, el("h2", { text: "Design" })));
@@ -1099,7 +1117,8 @@
     panel.appendChild(el("p", { class: "section-doc", text: "Templates rearrange the hero, navigation and every section. These previews use your current content." }));
     const lookGallery = el("div", { class: "theme-gallery" });
     const currentLook = PF.looks.current(data);
-    PF.looks.LIST.forEach(function (look) {
+    const selectedLook = PF.looks.byId(currentLook);
+    (selectedLook && selectedLook.retired ? PF.looks.GALLERY.concat([selectedLook]) : PF.looks.GALLERY).forEach(function (look) {
       lookGallery.appendChild(el("button", {
         type: "button", class: "theme-card", "aria-pressed": String(currentLook === look.id),
         onclick: function () { PF.looks.applyTemplate(data, look.id); touched(); buildThemePanel(panel); }
@@ -1110,7 +1129,7 @@
         el("span", { class: "theme-body" },
           el("strong", { text: look.name }),
           el("span", { text: look.blurb }),
-          el("span", { class: "theme-fonts", text: "Template · " + (look.group === "profession" ? "Profession" : "General") }),
+          el("span", { class: "theme-fonts", text: look.retired ? "Previous template · still supported" : "Page structure" }),
           currentLook === look.id ? el("span", { class: "theme-selected", text: "● selected" }) : null)));
     });
     panel.appendChild(lookGallery);
@@ -1142,7 +1161,9 @@
     function drawGallery() {
       clear(gallery);
       const selectedId = resolvedTheme().id;
-      data.theme.templates.concat(TH.THEMES).forEach(function (t) {
+      const selectedTheme = TH.themeById(selectedId, data.theme.templates);
+      const builtIns = selectedTheme && selectedTheme.retired ? TH.GALLERY.concat([selectedTheme]) : TH.GALLERY;
+      data.theme.templates.concat(builtIns).forEach(function (t) {
         const isCustom = data.theme.templates.indexOf(t) !== -1;
         const selected = selectedId === t.id;
         gallery.appendChild(el("button", {
@@ -1162,12 +1183,10 @@
     }
 
     function choosePreset(id) {
-      const hasTweaks = ["common", "dark", "light"].some(function (k) { return Object.keys(data.theme.vars[k]).length; }) ||
-                        Object.keys(data.theme.fonts).length;
-      if (hasTweaks && !window.confirm("Switching theme discards your colour, type and font tweaks. Continue?")) return;
+      const hasTweaks = ["common", "dark", "light"].some(function (k) { return Object.keys(data.theme.vars[k]).length; });
+      if (hasTweaks && !window.confirm("Switching theme discards your colour tweaks. Your chosen fonts and page treatment stay. Continue?")) return;
       data.theme.preset = id;
       data.theme.vars = { common: {}, dark: {}, light: {} };
-      data.theme.fonts = {};
       touched();
       if (applyThemeHere) applyThemeToEditor();
       buildThemePanel(panel);
@@ -1175,6 +1194,14 @@
 
     drawGallery();
     panel.appendChild(gallery);
+
+    panel.appendChild(el("h3", { class: "sub-head", text: "3 · Page treatment" }));
+    panel.appendChild(el("p", { class: "section-doc", text: "Mix any visual theme with a different composition. This changes framing, spacing and emphasis without changing your content or page template." }));
+    panel.appendChild(el("div", { class: "mode-switch", role: "group", "aria-label": "Page treatment" },
+      [["standard", "Standard"], ["framed", "Framed"], ["open", "Open"], ["poster", "Poster"]].map(function (v) {
+        return el("button", { type: "button", "aria-pressed": String((data.theme.variation || "standard") === v[0]), text: v[1],
+          onclick: function () { data.theme.variation = v[0]; touched(); buildThemePanel(panel); } });
+      })));
 
     /* mode + apply-here */
     const modeSwitch = el("div", { class: "mode-switch", role: "group", "aria-label": "Which mode you're editing" },
@@ -1374,6 +1401,7 @@
                 }, "danger"));
             }))
         : null));
+    fitThemeThumbnails(panel);
     ICONS.paint();
   }
 
@@ -1684,7 +1712,7 @@
     const modeSwitch = el("div", { class: "mode-switch", role: "group", "aria-label": "Preview colour mode" },
       [["dark", "Dark"], ["light", "Light"]].map(function (m) {
         return el("button", {
-          type: "button", "aria-pressed": String(data.theme.mode === m[0]), text: m[1],
+          type: "button", "aria-pressed": String(editMode === m[0]), text: m[1],
           onclick: function () { data.theme.mode = m[0]; editMode = m[0]; touched(); buildPreviewPanel(panel); sendPreview(); }
         });
       }));
@@ -1791,7 +1819,7 @@
     frame.contentWindow.postMessage({
       type: "portfolio:data",
       data: JSON.parse(serialise()),
-      mode: data.theme.mode,
+      mode: editMode,
       view: previewView,
       template: data.pdf.template,
       paper: data.pdf.paper
@@ -1869,7 +1897,7 @@
       tokenInput.value = "";               // the token lives in TOKEN only
       data = res.data;
       sha = res.sha;
-      editMode = data.theme.mode;
+      editMode = "dark";
       document.getElementById("repo-label").textContent =
         repo.owner + "/" + repo.name + " @ " + repo.branch + " · " + repo.path;
       document.getElementById("sha-label").textContent = "sha " + String(sha).slice(0, 7);
@@ -1904,7 +1932,7 @@
     setMsg(saveMsg, "Reloading…");
     fetchFile().then(function (res) {
       data = res.data; sha = res.sha;
-      editMode = data.theme.mode;
+      editMode = "dark";
       document.getElementById("sha-label").textContent = "sha " + String(sha).slice(0, 7);
       buildTabs(); selectTab(activeTab === "preview" ? "profile" : activeTab);
       savedSnapshot = serialise();

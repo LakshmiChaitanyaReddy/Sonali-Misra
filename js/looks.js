@@ -68,42 +68,51 @@
       skeleton: "modern-ledger", theme: "editorial-bw", mode: "dark", pack: "product-program", resume: "classic", example: "executive-dossier",
       order: ["about", "experience", "projects", "skills", "education", "certifications"],
       labels: { about: "Overview", experience: "Career ledger", projects: "Selected work", skills: "Capabilities", education: "Education", certifications: "Credentials" } },
-    { id: "engineering-blueprint", name: "Engineering Blueprint", blurb: "A sticky engineering profile beside repository-style projects, stack specifications and delivery history.",
-      skeleton: "engineering-blueprint", theme: "technical-dark", mode: "dark", pack: "software-it", resume: "technical", example: "software-developer",
+    { id: "engineering-blueprint", group: "it", name: "Engineering Blueprint", blurb: "A sticky engineering profile beside repository-style projects, stack specifications and delivery history.",
+      skeleton: "engineering-blueprint", theme: "circuit-cyan", mode: "dark", pack: "software-it", resume: "technical", example: "software-developer",
       order: ["projects", "skills", "experience", "about", "certifications", "education"],
       labels: { projects: "Systems & builds", skills: "Technical specification", experience: "Delivery history", about: "Engineering approach", certifications: "Credentials", education: "Education" } },
-    { id: "project-workbench", name: "Project Workbench", blurb: "A project-first IT portfolio with a strong introduction and detailed problem-to-result build stories.",
-      skeleton: "project-workbench", theme: "apple-glass", mode: "dark", pack: "software-it", resume: "modern", example: "software-developer",
+    { id: "project-workbench", group: "it", name: "Project Workbench", blurb: "A project-first IT portfolio with a strong introduction and detailed problem-to-result build stories.",
+      skeleton: "project-workbench", theme: "graphite-lime", mode: "dark", pack: "software-it", resume: "modern", example: "software-developer",
       order: ["projects", "skills", "experience", "about", "education", "certifications"],
       labels: { projects: "Build log", skills: "Tools & platforms", experience: "Teams & roles", about: "How I build", education: "Education", certifications: "Credentials" } },
-    { id: "systems-architect", name: "Systems Architect", blurb: "An architecture-led technology profile with decisions, systems delivered and a visual capability map.",
+    { id: "systems-architect", group: "it", name: "Systems Architect", blurb: "An architecture-led technology profile with decisions, systems delivered and a visual capability map.",
       skeleton: "systems-architect", theme: "executive-navy", mode: "dark", pack: "software-it", resume: "executive", example: "software-developer",
       order: ["about", "projects", "skills", "experience", "certifications", "education"],
       labels: { about: "Architecture perspective", projects: "Systems delivered", skills: "Capability map", experience: "Architecture roles", certifications: "Credentials", education: "Education" } },
+    { id: "cloud-operations", group: "it", name: "Cloud Operations", blurb: "Operations board for cloud, platform and DevOps work: deployments, service map and delivery record.",
+      skeleton: "cloud-operations", theme: "signal-grid", mode: "dark", pack: "software-it", resume: "technical", example: "software-developer",
+      order: ["projects", "skills", "experience", "about", "certifications", "education"],
+      labels: { projects: "Deployments", skills: "Service map", experience: "Operating history", about: "Approach", certifications: "Credentials", education: "Education" } },
+    { id: "security-brief", group: "it", name: "Security Brief", blurb: "Security and reliability portfolio that presents projects as numbered evidence and outcomes.",
+      skeleton: "security-brief", theme: "poster-impact", mode: "dark", pack: "software-it", resume: "ats", example: "software-developer",
+      order: ["about", "projects", "skills", "experience", "certifications", "education"],
+      labels: { about: "Profile brief", projects: "Evidence & outcomes", skills: "Control areas", experience: "Professional record", certifications: "Credentials", education: "Education" } },
 
     /* ---- by profession: a structure + theme + wording made for the job ---- */
-    { id: "chartered-accountant", group: "profession", name: "Chartered Accountant", blurb: "Credentials first, then engagements and advisory results. Precise, calm and built to be trusted with numbers.",
+    { id: "chartered-accountant", group: "profession", retired: true, name: "Chartered Accountant", blurb: "Credentials first, then engagements and advisory results. Precise, calm and built to be trusted with numbers.",
       skeleton: "executive-dossier", theme: "porcelain", mode: "light", pack: "finance-accounting", resume: "executive", example: "chartered-accountant",
       order: ["about", "certifications", "experience", "projects", "education", "skills"],
       labels: { about: "Profile", certifications: "Qualifications & registrations", experience: "Finance engagements", projects: "Advisory & transformation", education: "Education", skills: "Finance expertise" } },
-    { id: "teacher-educator", group: "profession", name: "Teacher & Educator", blurb: "How you teach, classroom projects told as problem, approach and outcome, and your qualifications. Warm and clear.",
+    { id: "teacher-educator", group: "profession", retired: true, name: "Teacher & Educator", blurb: "How you teach, classroom projects told as problem, approach and outcome, and your qualifications. Warm and clear.",
       skeleton: "product-case-study", theme: "sage-calm", mode: "light", pack: "education-teaching", resume: "modern", example: "teacher-educator",
       order: ["about", "projects", "experience", "education", "certifications", "skills"],
       labels: { about: "How I teach", projects: "Classroom projects", experience: "Teaching experience", education: "Education", certifications: "Qualifications & training", skills: "Teaching practice" } },
-    { id: "doctor-clinician", group: "profession", name: "Doctor & Clinician", blurb: "Clinical appointments, registrations and licences, audit and research. Calm, factual and easy for a panel to scan.",
+    { id: "doctor-clinician", group: "profession", retired: true, name: "Doctor & Clinician", blurb: "Clinical appointments, registrations and licences, audit and research. Calm, factual and easy for a panel to scan.",
       skeleton: "academic-cv", theme: "sky-calm", mode: "light", pack: "healthcare-clinical", resume: "academic", example: "doctor-clinician",
       order: ["about", "experience", "certifications", "education", "projects", "skills"],
       labels: { about: "Profile", experience: "Clinical appointments", certifications: "Registrations & licences", education: "Medical education", projects: "Audit, research & service improvement", skills: "Clinical skills" } },
-    { id: "nurse-allied-health", group: "profession", name: "Nurse & Allied Health", blurb: "Clinical experience, competencies and licences up front, with service improvement work that shows your impact.",
+    { id: "nurse-allied-health", group: "profession", retired: true, name: "Nurse & Allied Health", blurb: "Clinical experience, competencies and licences up front, with service improvement work that shows your impact.",
       skeleton: "clean-recruiter", theme: "sky-calm", mode: "light", pack: "healthcare-clinical", resume: "ats", example: "nurse-allied-health",
       order: ["about", "experience", "skills", "certifications", "education", "projects"],
       labels: { about: "Profile", experience: "Clinical experience", skills: "Clinical competencies", certifications: "Licences & certifications", education: "Education", projects: "Service improvement" } },
-    { id: "lawyer-counsel", group: "profession", name: "Lawyer & Counsel", blurb: "Practice areas, representative matters and admissions, in a restrained serif style that reads as advice you can trust.",
+    { id: "lawyer-counsel", group: "profession", retired: true, name: "Lawyer & Counsel", blurb: "Practice areas, representative matters and admissions, in a restrained serif style that reads as advice you can trust.",
       skeleton: "executive-dossier", theme: "sand-linen", mode: "light", pack: "legal", resume: "classic", example: "lawyer-counsel",
       order: ["about", "projects", "experience", "certifications", "education", "skills"],
       labels: { about: "Profile", projects: "Selected matters", experience: "Career", certifications: "Admissions & credentials", education: "Education", skills: "Practice areas" } }
   ];
   LOOKS.forEach(function (l, i) { l.sort = i + 1; l.group = l.group || "general"; });
+  const GALLERY = LOOKS.filter(function (l) { return !l.retired; });
 
   /* The ten retired looks → the look that replaced each one. */
   const ALIASES = {
@@ -147,13 +156,15 @@
     [/\b(designer|ux|ui|product design|interaction|product manager|product owner|product lead|service design)\b/i, "product-case-study"],
     [/\b(data|analyst|analytics|bi|business intelligence|statistic\w*|machine learning|ml|quant\w*)\b/i, "data-report"],
     [/\b(researcher|scientist|research|academic|fellow)\b/i, "academic-cv"],
-    [/\b(chartered accountant|accountant|auditor|finance controller|financial controller|bookkeeper|cpa|cma|acca)\b/i, "chartered-accountant"],
-    [/\b(teacher|tutor|educator|school|classroom|headteacher|head teacher|early years|teaching assistant)\b/i, "teacher-educator"],
-    [/\b(doctor|physician|surgeon|gp|general practitioner|registrar|clinician|paediatrician|pediatrician|psychiatrist|cardiologist|anaesthetist|anesthesiologist|radiologist|dentist|medical officer)\b/i, "doctor-clinician"],
-    [/\b(nurse|nursing|midwife|paramedic|physio\w*|therapist|pharmacist|radiographer|occupational therapist|dietitian|allied health)\b/i, "nurse-allied-health"],
-    [/\b(lawyer|attorney|solicitor|barrister|advocate|counsel|paralegal|legal)\b/i, "lawyer-counsel"],
+    [/\b(chartered accountant|accountant|auditor|finance controller|financial controller|bookkeeper|cpa|cma|acca)\b/i, "executive-dossier"],
+    [/\b(teacher|tutor|educator|school|classroom|headteacher|head teacher|early years|teaching assistant)\b/i, "product-case-study"],
+    [/\b(doctor|physician|surgeon|gp|general practitioner|registrar|clinician|paediatrician|pediatrician|psychiatrist|cardiologist|anaesthetist|anesthesiologist|radiologist|dentist|medical officer)\b/i, "academic-cv"],
+    [/\b(nurse|nursing|midwife|paramedic|physio\w*|therapist|pharmacist|radiographer|occupational therapist|dietitian|allied health)\b/i, "clean-recruiter"],
+    [/\b(lawyer|attorney|solicitor|barrister|advocate|counsel|paralegal|legal)\b/i, "executive-dossier"],
     [/\b(civil|mechanical|electrical|chemical|structural|process|manufacturing|biomedical)\s+engineer/i, "clean-recruiter"],
-    [/\b(engineer|developer|programmer|devops|sre|software|backend|frontend|full[- ]?stack|platform|infrastructure|security|solutions architect|cloud architect)\b/i, "technical-terminal"],
+    [/\b(security|cybersecurity|soc|security engineer|threat|incident response)\b/i, "security-brief"],
+    [/\b(devops|sre|cloud|platform|infrastructure|site reliability)\b/i, "cloud-operations"],
+    [/\b(engineer|developer|programmer|software|backend|frontend|full[- ]?stack|solutions architect)\b/i, "technical-terminal"],
     [/\b(artist|photograph\w*|illustrat\w*|film\w*|video\w*|animator|creative|musician|art director|architect|designer)\b/i, "creative-showcase"],
     [/\b(freelance\w*|consultant|independent|self-employed|contractor|founder|owner|studio)\b/i, "freelancer-services"],
     [/\b(nurse|physician|doctor|clinical|therap\w*|pharmac\w*|health\w*|accountant|finance|legal|lawyer|attorney|counsel|hr|people|operations|manager|teacher|educator|sales|marketing|writer)\b/i, "clean-recruiter"]
@@ -237,7 +248,7 @@
   }
 
   PF.provide("looks", {
-    LIST: LOOKS, GOALS: GOALS, TONES: TONES, TONE_THEMES: TONE_THEMES, ALIASES: ALIASES,
+    LIST: LOOKS, GALLERY: GALLERY, GOALS: GOALS, TONES: TONES, TONE_THEMES: TONE_THEMES, ALIASES: ALIASES,
     byId: byId, canonical: canonical, recommend: recommend, design: design, apply: apply, applyTemplate: applyTemplate, current: current
   });
 })();

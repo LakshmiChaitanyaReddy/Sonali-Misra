@@ -34,7 +34,7 @@
     const h = document.createElement("h2");
     h.textContent = missing.length === 1 ? "A script file is missing" : missing.length + " script files are missing";
     const p = document.createElement("p");
-    p.textContent = "The page loaded but these files didn't. Deploy them in a js/ folder next to this page:";
+    p.textContent = "The page loaded but these files didn't start. Deploy them in a js/ folder next to this page. If a file is already there, it may contain a JavaScript error or an older cached copy:";
     const list = document.createElement("p");
     list.className = "error-detail";
     list.textContent = missing.map(function (m) { return (PF && PF.FILE_OF && PF.FILE_OF[m]) || m; }).join("\n");
