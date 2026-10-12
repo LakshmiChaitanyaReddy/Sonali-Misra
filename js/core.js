@@ -23,7 +23,7 @@
   PF.FILE_OF = {
     core: "js/core.js", icons: "js/icons.js", themes: "js/themes.js", skeletons: "js/skeletons.js",
     layouts: "js/layouts.js", resume: "js/resume.js", render: "js/render.js",
-    site: "js/site.js", app: "js/app.js", packs: "js/packs.js",
+    site: "js/site.js", app: "js/app.js", packs: "js/packs.js", editor: "js/editor.js",
     api: "js/api.js", auth: "js/auth.js", billing: "js/billing.js", ats: "js/ats.js", publish: "js/publish.js",
     looks: "js/looks.js", insights: "js/insights.js", wizard: "js/wizard.js", ai: "js/ai.js", analytics: "js/analytics.js", preview: "js/preview.js"
   };

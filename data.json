@@ -13,7 +13,9 @@
       "light": {},
       "common": {}
     },
-    "fonts": {},
+    "fonts": {
+      "mono": "Fira Code"
+    },
     "preset": "editorial-bw",
     "customThemes": [],
     "iconAnimation": "lift"
@@ -269,7 +271,17 @@
       "featured": false
     }
   ],
-  "sections": [],
+  "sections": [
+    {
+      "id": "",
+      "blurb": "",
+      "items": [],
+      "title": "Test",
+      "layout": "",
+      "eyebrow": "",
+      "altBackground": false
+    }
+  ],
   "template": {
     "look": "clean-recruiter",
     "pack": "software-it",

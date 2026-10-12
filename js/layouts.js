@@ -196,7 +196,7 @@
      the platform's own pages and customer portfolios share one renderer.
      All of these are pure-content and available to customers too — except
      the pricing table, which renders the platform's live plans and is
-     platform-only by decision (PLAN.md).
+     platform-only by decision (docs/DESIGN.md).
      ==================================================================== */
 
   /* ── Horizontal rails ────────────────────────────────────────────────
